@@ -17,6 +17,14 @@ def create_dummy_pdb(path):
     u.add_TopologyAttr('element', ['C'] * n_atoms)
     u.add_TopologyAttr('occupancy', [1.0] * n_atoms)
     u.add_TopologyAttr('tempfactor', [0.0] * n_atoms)
+    u.add_TopologyAttr('altLoc', [' '] * n_atoms)
+    u.add_TopologyAttr('icode', [' '] * n_atoms)
+    u.add_TopologyAttr('segid', [' '])
+    u.add_TopologyAttr('record_type', ['ATOM'] * n_atoms)
+    u.add_TopologyAttr('formalcharges', [0] * n_atoms)
+    
+    # Set dummy dimensions to avoid CRYST1 warnings [a, b, c, alpha, beta, gamma]
+    u.dimensions = [100.0, 100.0, 100.0, 90.0, 90.0, 90.0]
     
     u.atoms.positions = coords
     

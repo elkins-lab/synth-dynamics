@@ -51,6 +51,12 @@ def test_system_no_ca(tmp_path):
     u.add_TopologyAttr('element', ['H'])
     u.add_TopologyAttr('occupancy', [1.0])
     u.add_TopologyAttr('tempfactor', [0.0])
+    u.add_TopologyAttr('altLoc', [' '])
+    u.add_TopologyAttr('icode', [' '])
+    u.add_TopologyAttr('segid', [' '])
+    u.add_TopologyAttr('record_type', ['ATOM'])
+    u.add_TopologyAttr('formalcharges', [0])
+    u.dimensions = [100.0, 100.0, 100.0, 90.0, 90.0, 90.0]
     u.atoms.write(str(pdb_path))
     
     with pytest.raises(ValueError, match="No C-alpha atoms found"):
