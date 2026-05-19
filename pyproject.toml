@@ -1,0 +1,27 @@
+[project]
+name = "synth-dynamics"
+version = "0.1.0"
+description = "Time-Resolved Ensemble Generator using Coarse-Grained ENM Langevin Dynamics"
+authors = [
+    { name = "George Elkins" }
+]
+dependencies = [
+    "numpy",
+    "MDAnalysis",
+    "scipy",
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["synth_dynamics*"]
