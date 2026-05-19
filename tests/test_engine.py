@@ -45,6 +45,12 @@ def test_system_no_ca(tmp_path):
     import MDAnalysis as mda
     u = mda.Universe.empty(1, trajectory=True)
     u.add_TopologyAttr('name', ['H'])
+    u.add_TopologyAttr('resname', ['UNK'])
+    u.add_TopologyAttr('resid', [1])
+    u.add_TopologyAttr('chainID', ['A'])
+    u.add_TopologyAttr('element', ['H'])
+    u.add_TopologyAttr('occupancy', [1.0])
+    u.add_TopologyAttr('tempfactor', [0.0])
     u.atoms.write(str(pdb_path))
     
     with pytest.raises(ValueError, match="No C-alpha atoms found"):

@@ -13,6 +13,11 @@ def create_dummy_pdb(path):
     u.add_TopologyAttr('name', ['CA'] * n_atoms)
     u.add_TopologyAttr('resname', ['ALA'] * n_atoms)
     u.add_TopologyAttr('resid', np.arange(1, n_atoms + 1))
+    u.add_TopologyAttr('chainID', ['A'] * n_atoms)
+    u.add_TopologyAttr('element', ['C'] * n_atoms)
+    u.add_TopologyAttr('occupancy', [1.0] * n_atoms)
+    u.add_TopologyAttr('tempfactor', [0.0] * n_atoms)
+    
     u.atoms.positions = coords
     
     u.atoms.write(path)
