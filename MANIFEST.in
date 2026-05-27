@@ -1,0 +1,9 @@
+include LICENSE
+include README.md
+recursive-include docs *
+recursive-include examples *.py
+recursive-include tests *.py
+exclude .gitignore
+exclude GEMINI.md
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
