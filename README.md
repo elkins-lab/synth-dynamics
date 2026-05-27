@@ -3,7 +3,8 @@
 [![PyPI version](https://img.shields.io/pypi/v/synth-dynamics.svg)](https://pypi.org/project/synth-dynamics/)
 [![Python](https://img.shields.io/pypi/pyversions/synth-dynamics.svg)](https://pypi.org/project/synth-dynamics/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/georgeelkins/synth-dynamics/actions/workflows/test.yml/badge.svg)](https://github.com/georgeelkins/synth-dynamics/actions/workflows/test.yml)
+[![Tests](https://github.com/elkins/synth-dynamics/actions/workflows/test.yml/badge.svg)](https://github.com/elkins/synth-dynamics/actions/workflows/test.yml)
+[![Lint](https://github.com/elkins/synth-dynamics/actions/workflows/lint.yml/badge.svg)](https://github.com/elkins/synth-dynamics/actions/workflows/lint.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Checked with mypy](https://img.shields.io/badge/type%20checked-mypy-blue)](https://mypy-lang.org/)
 
@@ -88,7 +89,7 @@ This library is part of the **synth-pdb ecosystem** — use it to generate traje
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/georgeelkins/synth-dynamics). Run `pre-commit run --all-files` before submitting.
+Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/elkins/synth-dynamics). Run `pre-commit run --all-files` before submitting.
 
 ## Citation
 
@@ -97,7 +98,7 @@ Contributions are welcome! Please open an issue or pull request on [GitHub](http
   author  = {Elkins, George},
   title   = {synth-dynamics: Coarse-grained protein dynamics for ensemble generation},
   year    = {2024},
-  url     = {https://github.com/georgeelkins/synth-dynamics},
+  url     = {https://github.com/elkins/synth-dynamics},
   version = {0.1.0}
 }
 ```

@@ -33,10 +33,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/georgeelkins/synth-dynamics"
-Repository = "https://github.com/georgeelkins/synth-dynamics"
+Homepage = "https://github.com/elkins/synth-dynamics"
+Repository = "https://github.com/elkins/synth-dynamics"
 Documentation = "https://synth-dynamics.readthedocs.io/"
-"Bug Tracker" = "https://github.com/georgeelkins/synth-dynamics/issues"
+"Bug Tracker" = "https://github.com/elkins/synth-dynamics/issues"
 
 [project.optional-dependencies]
 dev = [
