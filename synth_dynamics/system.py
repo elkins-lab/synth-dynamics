@@ -1,5 +1,5 @@
-import numpy as np
 import MDAnalysis as mda  # noqa: N813
+import numpy as np
 
 
 class System:

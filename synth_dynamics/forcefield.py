@@ -55,6 +55,4 @@ class ANMForceField:
         force_vecs[~self.adj] = 0.0
 
         # Total force on atom i is sum over j
-        forces = np.sum(force_vecs, axis=1)
-
         return np.asarray(np.sum(force_vecs, axis=1))
