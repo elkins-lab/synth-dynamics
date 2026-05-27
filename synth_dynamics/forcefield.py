@@ -3,7 +3,7 @@ from scipy.spatial.distance import pdist, squareform
 
 
 class ANMForceField:
-    def __init__(self, equilibrium_coords, cutoff=15.0, spring_constant=1.0):
+    def __init__(self, equilibrium_coords: np.ndarray, cutoff: float = 15.0, spring_constant: float = 1.0) -> None:
         """
         Anisotropic Network Model Force Field.
 
@@ -22,7 +22,7 @@ class ANMForceField:
         self.adj = (dist_matrix < cutoff) & (dist_matrix > 0)
         self.r0 = dist_matrix
 
-    def compute_forces(self, current_coords):
+    def compute_forces(self, current_coords: np.ndarray) -> np.ndarray:
         """
         Computes the harmonic forces on each atom.
 
@@ -55,4 +55,4 @@ class ANMForceField:
         # Total force on atom i is sum over j
         forces = np.sum(force_vecs, axis=1)
 
-        return forces
+        return np.asarray(np.sum(force_vecs, axis=1))

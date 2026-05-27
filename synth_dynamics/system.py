@@ -1,3 +1,4 @@
+import numpy as np
 import MDAnalysis as mda  # noqa: N813
 
 
@@ -20,9 +21,9 @@ class System:
         self.n_atoms = len(self.ca_atoms)
 
     @property
-    def positions(self):
-        return self.ca_atoms.positions
+    def positions(self) -> np.ndarray:
+        return np.asarray(self.ca_atoms.positions)
 
     @positions.setter
-    def positions(self, new_positions):
+    def positions(self, new_positions: np.ndarray) -> None:
         self.ca_atoms.positions = new_positions

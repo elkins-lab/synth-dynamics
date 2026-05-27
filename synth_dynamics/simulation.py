@@ -1,8 +1,22 @@
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
 import MDAnalysis as mda  # noqa: N813
+
+if TYPE_CHECKING:
+    from synth_dynamics.forcefield import ANMForceField
+    from synth_dynamics.integrator import LangevinIntegrator
+    from synth_dynamics.system import System
 
 
 class Simulation:
-    def __init__(self, system, forcefield, integrator):
+    def __init__(
+        self,
+        system: System,
+        forcefield: ANMForceField,
+        integrator: LangevinIntegrator,
+    ) -> None:
         """
         Orchestrates the Langevin dynamics simulation.
 
@@ -15,7 +29,7 @@ class Simulation:
         self.ff = forcefield
         self.integrator = integrator
 
-    def run(self, n_steps, output_path, stride=10):
+    def run(self, n_steps: int, output_path: str, stride: int = 10) -> None:
         """
         Runs the simulation and saves the trajectory.
 

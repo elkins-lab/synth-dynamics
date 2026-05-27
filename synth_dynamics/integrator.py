@@ -2,7 +2,7 @@ import numpy as np
 
 
 class LangevinIntegrator:
-    def __init__(self, dt=0.1, temperature=300.0, friction=1.0):
+    def __init__(self, dt: float = 0.1, temperature: float = 300.0, friction: float = 1.0) -> None:
         """
         Overdamped Langevin (Brownian) Integrator.
 
@@ -16,7 +16,7 @@ class LangevinIntegrator:
         self.gamma = friction
         self.kb = 0.0019872041  # Boltzmann constant in kcal/(mol*K)
 
-    def step(self, positions, forces):
+    def step(self, positions: np.ndarray, forces: np.ndarray) -> np.ndarray:
         """
         Performs a single integration step.
 
@@ -37,4 +37,4 @@ class LangevinIntegrator:
         sigma = np.sqrt(2.0 * self.kb * self.T * self.dt / self.gamma)
         random_force = sigma * np.random.normal(size=(n_atoms, 3))
 
-        return positions + drift + random_force
+        return np.asarray(positions + drift + random_force)
