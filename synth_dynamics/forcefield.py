@@ -3,7 +3,9 @@ from scipy.spatial.distance import pdist, squareform
 
 
 class ANMForceField:
-    def __init__(self, equilibrium_coords: np.ndarray, cutoff: float = 15.0, spring_constant: float = 1.0) -> None:
+    def __init__(
+        self, equilibrium_coords: np.ndarray, cutoff: float = 15.0, spring_constant: float = 1.0
+    ) -> None:
         """
         Anisotropic Network Model Force Field.
 
