@@ -10,6 +10,11 @@ class System:
         Args:
             pdb_path: Path to the input PDB file.
         """
+        import os
+
+        if not os.path.exists(pdb_path):
+            raise FileNotFoundError(f"PDB file not found: {pdb_path}")
+
         self.universe = mda.Universe(pdb_path)
         self.ca_atoms = self.universe.select_atoms("name CA")
 
@@ -26,4 +31,12 @@ class System:
 
     @positions.setter
     def positions(self, new_positions: np.ndarray) -> None:
+        if not isinstance(new_positions, np.ndarray):
+            new_positions = np.asarray(new_positions)
+
+        if new_positions.shape != (self.n_atoms, 3):
+            raise ValueError(
+                f"Invalid positions shape: expected ({self.n_atoms}, 3), got {new_positions.shape}"
+            )
+
         self.ca_atoms.positions = new_positions

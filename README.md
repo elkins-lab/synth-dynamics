@@ -109,7 +109,7 @@ Contributions are welcome! Please open an issue or pull request on [GitHub](http
 @software{synth_dynamics,
   author  = {Elkins, George},
   title   = {synth-dynamics: Coarse-grained protein dynamics for ensemble generation},
-  year    = {2024},
+  year    = {2026},
   url     = {https://github.com/elkins/synth-dynamics},
   version = {0.1.0}
 }

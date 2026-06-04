@@ -11,6 +11,13 @@ class LangevinIntegrator:
             temperature: Temperature in Kelvin.
             friction: Friction coefficient (gamma).
         """
+        if dt <= 0:
+            raise ValueError("Time step dt must be positive.")
+        if temperature < 0:
+            raise ValueError("Temperature must be non-negative.")
+        if friction <= 0:
+            raise ValueError("Friction coefficient gamma must be positive.")
+
         self.dt = dt
         self.T = temperature
         self.gamma = friction
