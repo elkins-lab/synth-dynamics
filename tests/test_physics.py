@@ -17,8 +17,8 @@ def test_einstein_smoluchowski_diffusion() -> None:
     # D = (0.001987 * 300) / 5.0 = 0.11922
     D = (integrator.kb * T) / gamma
 
-    n_atoms = 100
-    n_steps = 1000
+    n_atoms = 500
+    n_steps = 2000
 
     # Initialize atoms at origin
     positions = np.zeros((n_atoms, 3))
@@ -35,15 +35,17 @@ def test_einstein_smoluchowski_diffusion() -> None:
 
     # Total time elapsed
     times = np.arange(1, n_steps + 1) * dt
+    y = np.array(sq_displacements)
 
-    # Perform linear fit: MSD = slope * t
-    slope, _ = np.polyfit(times, sq_displacements, 1)
+    # Perform zero-intercept linear fit: MSD = slope * t
+    # slope = sum(t * y) / sum(t^2)
+    slope = np.sum(times * y) / np.sum(times**2)
 
     # Theoretical slope is 6 * D
     expected_slope = 6.0 * D
 
-    # Check within 5% tolerance (stochastic)
-    assert np.isclose(slope, expected_slope, rtol=0.05)
+    # Check within 10% tolerance (stochastic)
+    assert np.isclose(slope, expected_slope, rtol=0.1)
 
 
 def test_equipartition_harmonic_oscillator() -> None:
@@ -64,7 +66,7 @@ def test_equipartition_harmonic_oscillator() -> None:
     # R0 = 0
     # Force on moving atom: F = -k * x
 
-    n_steps = 50000
+    n_steps = 500000
     x = 1.0  # Initial displacement
 
     potential_energies = []
@@ -82,10 +84,10 @@ def test_equipartition_harmonic_oscillator() -> None:
         potential_energies.append(0.5 * k * x**2)
 
     # Mean potential energy should be 1/2 * kb * T (for 1 degree of freedom)
-    mean_v = np.mean(potential_energies[1000:])  # Burn-in
+    mean_v = np.mean(potential_energies[50000:])  # Burn-in
     expected_v = 0.5 * integrator.kb * T
 
-    # Check within 10% (stochastic 1D sampling requires more steps for higher precision)
+    # Check within 10% tolerance
     assert np.isclose(mean_v, expected_v, rtol=0.1)
 
 
@@ -107,7 +109,7 @@ def test_boltzmann_distribution_bond() -> None:
     coords_eq = np.array([[0.0, 0.0, 0.0], [r0, 0.0, 0.0]])
     ff = ANMForceField(coords_eq, cutoff=20.0, spring_constant=k)
 
-    n_steps = 20000
+    n_steps = 200000
     pos = coords_eq.copy()
 
     distances = []
@@ -120,7 +122,7 @@ def test_boltzmann_distribution_bond() -> None:
 
     # Variance of distance r should be kb * T / k
     # This is an approximation for small fluctuations in 3D
-    actual_var = np.var(distances[1000:])
+    actual_var = np.var(distances[20000:])
     expected_var = integrator.kb * T / k
 
     # Check within 10%

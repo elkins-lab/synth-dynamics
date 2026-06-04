@@ -60,7 +60,7 @@ system = System("protein.pdb")
 # Cutoff (15A) and spring constant determine the flexibility
 ff = ANMForceField(system.equilibrium_coords, cutoff=15.0, spring_constant=1.0)
 
-# 3. Initialize the Langevin integrator (dt in fs, T in Kelvin)
+# 3. Initialize the Langevin integrator (dt in ps, T in Kelvin)
 integrator = LangevinIntegrator(dt=0.1, temperature=300.0, friction=1.0)
 
 # 4. Run and save the trajectory
@@ -111,6 +111,6 @@ Contributions are welcome! Please open an issue or pull request on [GitHub](http
   title   = {synth-dynamics: Coarse-grained protein dynamics for ensemble generation},
   year    = {2026},
   url     = {https://github.com/elkins/synth-dynamics},
-  version = {0.1.0}
+  version = {0.1.1}
 }
 ```

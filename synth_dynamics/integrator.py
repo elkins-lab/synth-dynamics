@@ -6,6 +6,11 @@ class LangevinIntegrator:
         """
         Overdamped Langevin (Brownian) Integrator.
 
+        Recommended units:
+            dt: ps
+            temperature: K
+            friction: (kcal/mol) * ps / A^2
+
         Args:
             dt: Time step.
             temperature: Temperature in Kelvin.

@@ -12,7 +12,7 @@ class ANMForceField:
         Args:
             equilibrium_coords: (N, 3) array of C-alpha equilibrium positions.
             cutoff: Distance cutoff for interactions in Angstroms.
-            spring_constant: Uniform spring constant k.
+            spring_constant: Uniform spring constant k (recommended in kcal/(mol*A^2)).
         """
         self.x0 = equilibrium_coords
         self.cutoff = cutoff
