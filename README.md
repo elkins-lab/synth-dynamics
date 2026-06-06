@@ -1,4 +1,6 @@
-# synth-dynamics: Time-Resolved Ensemble Generator
+# synth-dynamics
+
+[![codecov](https://codecov.io/gh/elkins/synth-dynamics/graph/badge.svg?token=YOUR_TOKEN)](https://codecov.io/gh/elkins/synth-dynamics): Time-Resolved Ensemble Generator
 
 [![PyPI version](https://img.shields.io/pypi/v/synth-dynamics.svg)](https://pypi.org/project/synth-dynamics/)
 [![Python](https://img.shields.io/pypi/pyversions/synth-dynamics.svg)](https://pypi.org/project/synth-dynamics/)
