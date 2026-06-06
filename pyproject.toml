@@ -26,6 +26,7 @@ classifiers = [
 keywords = ["molecular-dynamics", "protein-dynamics", "ANM", "Langevin", "ensemble-generation"]
 
 dependencies = [
+    "synth-core @ git+https://github.com/elkins/synth-core.git",
     "numpy",
     "MDAnalysis",
     "scipy",

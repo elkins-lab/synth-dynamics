@@ -1,5 +1,5 @@
 import numpy as np
-
+from synth_core.constants import BOLTZMANN_KCAL_MOL_K
 
 class LangevinIntegrator:
     def __init__(self, dt: float = 0.1, temperature: float = 300.0, friction: float = 1.0) -> None:
@@ -26,7 +26,7 @@ class LangevinIntegrator:
         self.dt = dt
         self.T = temperature
         self.gamma = friction
-        self.kb = 0.0019872041  # Boltzmann constant in kcal/(mol*K)
+        self.kb = BOLTZMANN_KCAL_MOL_K
 
     def step(self, positions: np.ndarray, forces: np.ndarray) -> np.ndarray:
         """
