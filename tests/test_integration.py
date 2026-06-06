@@ -37,39 +37,28 @@ def create_dummy_pdb(path):
     return path
 
 
-def test_full_simulation():
-    pdb_path = "dummy.pdb"
+def test_full_simulation(tmp_path):
+    pdb_path = str(tmp_path / "dummy.pdb")
     traj_path = (
-        "output.pdb"  # Using .pdb for easy human reading if needed, but .dcd would be faster
+        str(tmp_path / "output.pdb")  # Using .pdb for easy human reading if needed
     )
 
-    try:
-        create_dummy_pdb(pdb_path)
+    create_dummy_pdb(pdb_path)
 
-        system = System(pdb_path)
-        ff = ANMForceField(system.equilibrium_coords, cutoff=10.0, spring_constant=1.0)
-        integrator = LangevinIntegrator(dt=0.1, temperature=300.0, friction=1.0)
-        sim = Simulation(system, ff, integrator)
+    system = System(pdb_path)
+    ff = ANMForceField(system.equilibrium_coords, cutoff=10.0, spring_constant=1.0)
+    integrator = LangevinIntegrator(dt=0.1, temperature=300.0, friction=1.0)
+    sim = Simulation(system, ff, integrator)
 
-        n_steps = 100
-        stride = 10
-        sim.run(n_steps=n_steps, output_path=traj_path, stride=stride)
+    n_steps = 100
+    stride = 10
+    sim.run(n_steps=n_steps, output_path=traj_path, stride=stride)
 
-        # Verify output
-        assert os.path.exists(traj_path)
-        u_out = mda.Universe(traj_path)
-        # Expected frames: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90 -> 10 frames
-        # MDAnalysis Writer might include the first frame depending on implementation.
-        # Let's just check it's >= 10.
-        print(f"Number of frames in output: {len(u_out.trajectory)}")
-        assert len(u_out.trajectory) >= 10
-
-    finally:
-        if os.path.exists(pdb_path):
-            os.remove(pdb_path)
-        if os.path.exists(traj_path):
-            os.remove(traj_path)
-
-
-if __name__ == "__main__":
-    test_full_simulation()
+    # Verify output
+    assert os.path.exists(traj_path)
+    u_out = mda.Universe(traj_path)
+    # Expected frames: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90 -> 10 frames
+    # MDAnalysis Writer might include the first frame depending on implementation.
+    # Let's just check it's >= 10.
+    print(f"Number of frames in output: {len(u_out.trajectory)}")
+    assert len(u_out.trajectory) >= 10

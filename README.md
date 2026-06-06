@@ -1,7 +1,6 @@
-# synth-dynamics
+# synth-dynamics: Time-Resolved Ensemble Generator
 
-[![codecov](https://codecov.io/gh/elkins/synth-dynamics/graph/badge.svg?token=YOUR_TOKEN)](https://codecov.io/gh/elkins/synth-dynamics): Time-Resolved Ensemble Generator
-
+[![codecov](https://codecov.io/gh/elkins/synth-dynamics/graph/badge.svg)](https://codecov.io/gh/elkins/synth-dynamics)
 [![PyPI version](https://img.shields.io/pypi/v/synth-dynamics.svg)](https://pypi.org/project/synth-dynamics/)
 [![Python](https://img.shields.io/pypi/pyversions/synth-dynamics.svg)](https://pypi.org/project/synth-dynamics/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
