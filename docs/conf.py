@@ -20,3 +20,4 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "sphinx_rtd_theme"
 html_static_path: list[str] = []
+html_extra_path = ["google7f0d84bcdb02d19b.html"]
