@@ -1,6 +1,7 @@
 import numpy as np
 from synth_core.constants import BOLTZMANN_KCAL_MOL_K
 
+
 class LangevinIntegrator:
     def __init__(self, dt: float = 0.1, temperature: float = 300.0, friction: float = 1.0) -> None:
         """
