@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "synth-dynamics"
-version = "0.1.1"
+version = "0.1.2"
 description = "Time-Resolved Ensemble Generator using Coarse-Grained ENM Langevin Dynamics"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -26,7 +26,7 @@ classifiers = [
 keywords = ["molecular-dynamics", "protein-dynamics", "ANM", "Langevin", "ensemble-generation"]
 
 dependencies = [
-    "synth-core @ git+https://github.com/elkins/synth-core.git",
+    "synth-core",
     "numpy",
     "MDAnalysis",
     "scipy",
