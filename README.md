@@ -34,6 +34,12 @@ This tool is designed to bridge the gap between static structures and time-avera
 - **Easy to Use**: Simple API for loading PDBs, configuring forcefields, and running simulations.
 - **Extensively Tested**: 100% test coverage ensuring reliability and correctness.
 
+## 📚 Tutorials
+
+Experience **synth-dynamics** directly in your browser:
+
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/elkins/synth-dynamics/blob/main/examples/enm_dynamics.ipynb) **Elastic Network Models & Langevin Dynamics** — Learn how to predict protein flexibility and simulate thermal fluctuations.
+
 ## Installation
 
 `synth-dynamics` requires Python 3.10+ and the following dependencies:
