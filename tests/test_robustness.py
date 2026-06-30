@@ -37,7 +37,7 @@ def test_system_invalid_positions_setter(tmp_path: Path) -> None:
         sys.positions = np.array([[1.0, 1.0, 1.0], [2.0, 2.0, 2.0]])
 
     # Non-array input (should be converted)
-    sys.positions = np.array([[2.0, 2.0, 2.0]])
+    sys.positions = [[2.0, 2.0, 2.0]]  # type: ignore[assignment]
     assert np.allclose(sys.positions, [[2.0, 2.0, 2.0]])
 
 
