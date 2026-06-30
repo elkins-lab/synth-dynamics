@@ -1,8 +1,16 @@
+"""
+Defines the molecular system and manages atomic coordinates.
+"""
+
 import MDAnalysis as mda  # noqa: N813
 import numpy as np
 
 
 class System:
+    """
+    Represents the physical system being simulated, encapsulating atomic topology and coordinates.
+    """
+
     def __init__(self, pdb_path: str):
         """
         Initializes the system by loading a PDB file and extracting C-alpha atoms.
@@ -27,10 +35,17 @@ class System:
 
     @property
     def positions(self) -> np.ndarray:
+        """Get the current atomic positions as a numpy array."""
         return np.asarray(self.ca_atoms.positions)
 
     @positions.setter
     def positions(self, new_positions: np.ndarray) -> None:
+        """
+        Set new atomic positions.
+
+        Args:
+            new_positions: (N, 3) array of coordinates.
+        """
         if not isinstance(new_positions, np.ndarray):
             new_positions = np.asarray(new_positions)
 

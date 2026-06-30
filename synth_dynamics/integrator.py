@@ -1,8 +1,16 @@
+"""
+Langevin dynamics integrator for performing numerical integration.
+"""
+
 import numpy as np
 from synth_core.constants import BOLTZMANN_KCAL_MOL_K
 
 
 class LangevinIntegrator:
+    """
+    Integrates the equations of motion using the overdamped Langevin (Brownian) equation.
+    """
+
     def __init__(self, dt: float = 0.1, temperature: float = 300.0, friction: float = 1.0) -> None:
         """
         Overdamped Langevin (Brownian) Integrator.

@@ -1,8 +1,16 @@
+"""
+Anisotropic Network Model (ANM) force field implementation.
+"""
+
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
 
 
 class ANMForceField:
+    """
+    Computes harmonic forces between interacting atoms based on an Anisotropic Network Model (ANM).
+    """
+
     def __init__(
         self, equilibrium_coords: np.ndarray, cutoff: float = 15.0, spring_constant: float = 1.0
     ) -> None:

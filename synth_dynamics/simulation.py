@@ -1,3 +1,7 @@
+"""
+Orchestrates the Langevin dynamics simulation using the force field and integrator.
+"""
+
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -11,6 +15,10 @@ if TYPE_CHECKING:
 
 
 class Simulation:
+    """
+    Manages the overall simulation loop, coordinating forces, integration steps, and trajectory I/O.
+    """
+
     def __init__(
         self,
         system: System,
