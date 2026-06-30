@@ -104,7 +104,8 @@ known-first-party = ["synth_dynamics"]
 
 # ── Type checker ──────────────────────────────────────────────────────────────
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.12"
+enable_incomplete_feature = ["NewGenericSyntax"]
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
