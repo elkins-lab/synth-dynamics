@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath(".."))
 project = "synth-dynamics"
 copyright = "2026, George Elkins"
 author = "George Elkins"
-release = "0.1.1"
+release = "0.1.3"
 
 extensions = [
     "sphinx.ext.autodoc",

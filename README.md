@@ -118,6 +118,6 @@ Contributions are welcome! Please open an issue or pull request on [GitHub](http
   title   = {synth-dynamics: Coarse-grained protein dynamics for ensemble generation},
   year    = {2026},
   url     = {https://github.com/elkins-lab/synth-dynamics},
-  version = {0.1.2}
+  version = {0.1.3}
 }
 ```
