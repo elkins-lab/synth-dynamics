@@ -1,11 +1,11 @@
 # synth-dynamics: Time-Resolved Ensemble Generator
 
-[![codecov](https://codecov.io/gh/elkins/synth-dynamics/branch/main/graph/badge.svg)](https://codecov.io/gh/elkins/synth-dynamics)
+[![codecov](https://codecov.io/gh/elkins-lab/synth-dynamics/branch/main/graph/badge.svg)](https://codecov.io/gh/elkins-lab/synth-dynamics)
 [![PyPI version](https://img.shields.io/pypi/v/synth-dynamics.svg)](https://pypi.org/project/synth-dynamics/)
 [![Python](https://img.shields.io/pypi/pyversions/synth-dynamics.svg)](https://pypi.org/project/synth-dynamics/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/elkins/synth-dynamics/actions/workflows/test.yml/badge.svg)](https://github.com/elkins/synth-dynamics/actions/workflows/test.yml)
-[![Lint](https://github.com/elkins/synth-dynamics/actions/workflows/lint.yml/badge.svg)](https://github.com/elkins/synth-dynamics/actions/workflows/lint.yml)
+[![Tests](https://github.com/elkins-lab/synth-dynamics/actions/workflows/test.yml/badge.svg)](https://github.com/elkins-lab/synth-dynamics/actions/workflows/test.yml)
+[![Lint](https://github.com/elkins-lab/synth-dynamics/actions/workflows/lint.yml/badge.svg)](https://github.com/elkins-lab/synth-dynamics/actions/workflows/lint.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Checked with mypy](https://img.shields.io/badge/type%20checked-mypy-blue)](https://mypy-lang.org/)
 
@@ -38,7 +38,7 @@ This tool is designed to bridge the gap between static structures and time-avera
 
 Experience **synth-dynamics** directly in your browser:
 
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/elkins/synth-dynamics/blob/main/examples/interactive_tutorials/enm_dynamics.ipynb) **Elastic Network Models & Langevin Dynamics** — Learn how to predict protein flexibility and simulate thermal fluctuations.
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/elkins-lab/synth-dynamics/blob/main/examples/interactive_tutorials/enm_dynamics.ipynb) **Elastic Network Models & Langevin Dynamics** — Learn how to predict protein flexibility and simulate thermal fluctuations.
 
 ## Installation
 
@@ -98,17 +98,17 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Related Projects
 
-This library is part of the **synth-pdb ecosystem** — use it to generate trajectories for [synth-nmr](https://github.com/elkins/synth-nmr) or [synth-saxs](https://github.com/elkins/synth-saxs) ensemble averaging:
+This library is part of the **synth-pdb ecosystem** — use it to generate trajectories for [synth-nmr](https://github.com/elkins-lab/synth-nmr) or [synth-saxs](https://github.com/elkins-lab/synth-saxs) ensemble averaging:
 
-- [synth-pdb](https://github.com/elkins/synth-pdb) — Core protein structure generator
-- [synth-nmr](https://github.com/elkins/synth-nmr) — NMR observables simulator
-- [synth-saxs](https://github.com/elkins/synth-saxs) — SAXS profile simulator
-- [synth-cryo-em](https://github.com/elkins/synth-cryo-em) — Cryo-EM map simulator
-- [diff-biophys](https://github.com/elkins/diff-biophys) — Differentiable JAX biophysics kernels
+- [synth-pdb](https://github.com/elkins-lab/synth-pdb) — Core protein structure generator
+- [synth-nmr](https://github.com/elkins-lab/synth-nmr) — NMR observables simulator
+- [synth-saxs](https://github.com/elkins-lab/synth-saxs) — SAXS profile simulator
+- [synth-cryo-em](https://github.com/elkins-lab/synth-cryo-em) — Cryo-EM map simulator
+- [diff-biophys](https://github.com/elkins-lab/diff-biophys) — Differentiable JAX biophysics kernels
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/elkins/synth-dynamics). Run `pre-commit run --all-files` before submitting.
+Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/elkins-lab/synth-dynamics). Run `pre-commit run --all-files` before submitting.
 
 ## Citation
 
@@ -117,7 +117,7 @@ Contributions are welcome! Please open an issue or pull request on [GitHub](http
   author  = {Elkins, George},
   title   = {synth-dynamics: Coarse-grained protein dynamics for ensemble generation},
   year    = {2026},
-  url     = {https://github.com/elkins/synth-dynamics},
-  version = {0.1.1}
+  url     = {https://github.com/elkins-lab/synth-dynamics},
+  version = {0.1.2}
 }
 ```
